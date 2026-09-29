@@ -1,38 +1,37 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Operaciones</title>
 </head>
 <body>
+
     <script>
-        var num1 = parseInt(prompt("Dame num1: "));
-        var num2 = parseInt(prompt("Dame num2: "));
-        var opcion = prompt("Que quieres hacer: ");
-        if(opcion = suma){
-            var suma = prompt(num1 + num2);
-            alert("La suma es: " + suma);
+        var num1 = parseInt(prompt("Dame el primer número:"));
+        var num2 = parseInt(prompt("Dame el segundo número:"));
 
+        var suma = num1 + num2;
+        var resta = num1 - num2;
+        var multiplicacion = num1 * num2;
 
-        }if (opcion = resta) {
-            var resta = prompt(num1 - num2);
-            alert("La resta es: " + resta);
+        var division;
 
-        }if (opcion = multi) {
-            var multi = prompt(num1 * num2);
-            alert("La multiplicacion es: " + multi);
-
-        }else{
-            if(num2 = 0){
-                alert("No se puede dividir entre cero");
-            }else{
-            var div = prompt(num1 / num2);
-            alert("La division es : " + div)
+        if (num2 === 0) {
+            division = "No se puede dividir entre cero";
+        } else {
+            division = num1 / num2;
         }
-    }
 
-
+        alert(
+            "La suma es: " + suma + " "+
+            "La resta es: " + resta + " "+
+            "La multiplicación es: " + multiplicacion + " "+
+            "La división es: " + division
+        );
     </script>
+
 </body>
 </html>
+

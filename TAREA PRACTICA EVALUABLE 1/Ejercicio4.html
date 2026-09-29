@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lenguaje de Marcas </h1>
+    <script>
+        var notaAlumnoExamen = parseFloat(prompt("Dame tu nota de examen: "));
+        var notaAlumnoActitud = parseFloat(prompt("Dame tu nota de actitud: "));
+        var notaMediaPracticas = parseFloat(prompt("Dame nota media practicas: "));
+        var mediaAlumno = notaAlumnoExamen + notaAlumnoActitud + notaMediaPracticas / 3;
+
+        if(mediaAlumno >= 5){
+            alert("Aprobado");
+        }else{
+            alert("Suspenso")
+        }
+        document.write("La media es: " + mediaAlumno );
+    </script>
+</body>
+</html>
