@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombres = prompt("Introduce una lista de nombres separados por comas:");
+        var lista = nombres.split(",");
+        
+        for (var l in lista) {
+            document.write("Hola " + lista[l] + "<br>");
+        }
+        //Numero de personas
+        document.write("Las personas que hay son : " + lista.length + "<br>");
+
+        //Primera persona de la lista
+            document.write("La primera persona que hay es : " + lista[0] + "<br>");
+ 
+         //Ultima persona de la lista
+            document.write("La ultima persona que hay es : " + lista[lista.length - 1] + "<br>");
+        
+        //Lista ordenada de la A-Z y Z-A
+       /* document.write(lista.sort);
+        lista.reverse();*/
+
+
+    </script>
+</body>
+</html>

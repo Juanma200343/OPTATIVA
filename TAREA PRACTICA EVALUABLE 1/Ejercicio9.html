@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombres = prompt("Introduce una lista de nombres separados por comas:");
+        var lista = nombres.split(","); //Con split te separa por lo que le digamos en este caso por comas (",")
+
+        for (var l in lista) {
+            document.write("Hola " + lista[l] + "<br>");
+        }
+
+    </script>
+</body>
+</html>

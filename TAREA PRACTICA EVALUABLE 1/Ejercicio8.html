@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var saldo = 30;
+        var numero;
+        let apuesta;
+        let dado;
+
+        while (saldo > 0 && saldo < 120) { /*While para saber si esta entre 1 y 120*/
+
+            numero = parseInt(prompt("Tienes " + saldo + "€." +
+            "¿Qué número quieres apostar? (1-6)" + "Pulsa 0 para salir."
+    ));
+
+        if (numero === 0) {
+        break;
+    }
+
+    if (numero < 1 || numero > 6) {
+        alert("Debes elegir un número entre 1 y 6.");
+    
+    }
+
+    apuesta = parseFloat(prompt("¿Cuánto dinero quieres apostar?"));
+
+    if (apuesta <= 0 || apuesta > saldo) {
+        alert("La apuesta no es válida.");
+  
+    }
+
+    // Lanzamos el dado: número aleatorio entre 1 y 6
+    dado = Math.floor(Math.random() * 6) + 1;
+
+    alert("Ha salido el número " + dado);
+
+    if (numero === dado) {
+        saldo += apuesta * 10;
+        alert("¡Has acertado! Ganas " + (apuesta * 10) + "€.");
+    } else {
+        saldo -= apuesta;
+        alert("No has acertado. Pierdes " + apuesta + "€.");
+    }
+}
+
+        alert("Fin del juego. Tu saldo final es de " + saldo + "€.");
+
+    </script>
+
+</body>
+</html>

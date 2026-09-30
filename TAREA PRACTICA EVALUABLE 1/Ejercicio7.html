@@ -7,7 +7,23 @@
 </head>
 <body>
     <script>
-        
+        var respuesta;
+        var acertado = false;
+
+        for (var i = 0; i < 3; i++) {
+        respuesta = prompt("¿Quién es el pintor de las Meninas?");
+
+        if (respuesta === "Velázquez") {
+        acertado = true;
+        break;
+        }
+}
+
+    if (acertado) {
+        alert("Correcto! Ha acertado.");
+    } else {
+        alert("Lo siento! La respuesta correcta es Velázquez");
+    }
     </script>
 </body>
 </html>
