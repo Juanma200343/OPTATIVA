@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var el = parseInt(("Cuantos elementos p tienes: "));
+        var padre = document.getElementsByTagName("h1")[0];
+
+        for(var i =1; i <= el;i++ ){
+            var nuevoParrafo = document.createElement("p");
+            nuevoParrafo.createNode = "Parrafo" + i;
+            padre.appendChild(nuevoParrafo);
+            padre.removeChild(padre.lastChild)
+        }
+        
+
+    </script>
+</body>
+</html>
