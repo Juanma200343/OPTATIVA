@@ -1,0 +1,40 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - DOM JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Lista de páginas web</h1>
+
+    <ul>
+        <li>
+            <a href="https://www.google.com" onclick="mostrarWeb(this)">Google</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com" onclick="mostrarWeb(this)">YouTube</a>
+        </li>
+        <li>
+            <a href="https://www.wikipedia.org" onclick="mostrarWeb(this)">Wikipedia</a>
+        </li>
+    </ul>
+
+    <label for="direccion">Dirección web:</label>
+    <input type="text" id="direccion">
+
+    <script>
+
+        function mostrarWeb(enlace) {
+
+            document.getElementById("direccion").value = enlace.href;
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
