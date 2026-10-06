@@ -18,13 +18,16 @@
     
 <script> 
     // 1.1. Mostrar por consola el título tal y como está y en mayúsculas 
-    const titulo = document.title; console.log(titulo); console.log(titulo.toUpperCase()); 
+    const titulo = document.title; 
+    console.log(titulo);
+    console.log(titulo.toUpperCase()); 
 
     // 1.2. Cambiar el nombre de los input
-    document.getElementById("nombre").value = "Francisco"; document.getElementById("apellido").value = "Alarcón";
+    document.getElementById("nombre").value = "Isco"; 
+    document.getElementById("apellido").value = "Alarcón";
     
     // 1.3. Añadir un texto a la etiqueta p con id saludo
-    const saludo = document.getElementById("saludo"); saludo.textContent = "Hola Francisco Alarcón";
+    const saludo = document.getElementById("saludo"); saludo.textContent = "Hola Isco Alarcón";
     
     // 1.4. Añadir una etiqueta p justo debajo de la etiqueta de id saludo 
     const nuevoParrafo = document.createElement("p");

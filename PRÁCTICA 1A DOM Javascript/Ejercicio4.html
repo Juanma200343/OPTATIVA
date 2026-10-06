@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <p>Ciudad: <span id="ciudad"></span></p>
+    <p>Gastos de envío: <span id="gastos" ></span></p>
+    <h1>Fecha de envío: <span id="fecha"></span></h1>
+
+    <script>
+        function cambiarValorCiudad(){
+            document.getElementById("ciudad").textContent ="Sevilla";
+        }
+
+        function cambiarGastosDeEnvio(){
+            document.getElementById("gastos").textContent ="3€";
+        }
+
+        function cambiarFechaEnvio(){
+            var fechaActual = new Date();
+
+            document.getElementById("fecha").textContent = fechaActual.toLocaleDateString();
+        }
+
+        window.onload = function() {
+            cambiarValorCiudad();
+            cambiarGastosDeEnvio();
+            cambiarFechaEnvio();
+        };
+
+    </script>
+
+</body>
+</html>

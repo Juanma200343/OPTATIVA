@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="nombre">Tu nombre</p> 
+    <p id="apellidos">Tus apellidos</p>
+
+    <button onclick="Correcto()">Correcto</button>
+    <button onclick="Incorrecto()">Incorrecto</button>
+
+    <script>
+        function Correcto() {
+            document.getElementById("nombre").style.color = "green"; 
+            document.getElementById("apellidos").style.color = "green";        }
+
+        function Incorrecto() {
+            document.getElementById("nombre").style.color = "red"; 
+            document.getElementById("apellidos").style.color = "red";
+
+        }
+    </script>
+
+</body>
+</html>
