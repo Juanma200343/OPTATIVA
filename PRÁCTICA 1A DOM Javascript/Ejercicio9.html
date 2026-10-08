@@ -1,0 +1,55 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de la compra</title>
+</head>
+
+<body>
+
+    <h1>Lista de la compra</h1>
+
+    <ul id="lista">
+    </ul>
+
+    <button onclick="añadirProducto()">Añadir</button>
+
+    <script>
+
+        function añadirProducto() {
+
+            var producto = prompt("¿Qué producto quieres añadir?");
+
+            if (producto != null && producto != "") {
+
+                // Creamos el elemento li
+                var nuevoProducto = document.createElement("li");
+
+                // Creamos el texto del producto
+                var textoProducto = document.createElement("span");
+                textoProducto.textContent = producto;
+
+                // Creamos el botón SÍ
+                var botonSi = document.createElement("button");
+                botonSi.textContent = "SÍ";
+
+                // Creamos el botón NO
+                var botonNo = document.createElement("button");
+                botonNo.textContent = "NO";
+
+                // Cuando pulsamos SÍ
+                botonSi.onclick = function() {
+                    textoProducto.style.color = "green";
+                    textoProducto.style.fontStyle = "italic";
+                };
+
+                // Cuando pulsamos NO
+                botonNo.onclick = function() {
+                    textoProducto.style.color = "red";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

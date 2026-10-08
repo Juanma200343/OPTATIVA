@@ -1,0 +1,40 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aumentar y disminuir letra</title>
+</head>
+
+<body>
+
+    <p id="parrafo">
+        JavaScript es un lenguaje de programación que se utiliza para crear
+        páginas web interactivas. Permite mejorar la experiencia del usuario
+        mediante elementos dinámicos como animaciones, menús y mapas
+        interactivos.
+    </p>
+
+    <span onclick="aumentarLetra()">Aumentar letra</span>
+    <br>
+    <span onclick="disminuirLetra()">Disminuir letra</span>
+
+    <script>
+
+        var tamaño = 16;
+
+        function aumentarLetra() {
+            tamaño++;
+            document.getElementById("parrafo").style.fontSize = tamaño + "px";
+        }
+
+        function disminuirLetra() {
+            tamaño--;
+            document.getElementById("parrafo").style.fontSize = tamaño + "px";
+        }
+
+    </script>
+
+</body>
+</html>
+

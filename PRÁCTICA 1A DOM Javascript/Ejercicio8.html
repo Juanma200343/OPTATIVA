@@ -1,0 +1,38 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de la compra</title>
+</head>
+
+<body>
+
+    <h1>Lista de la compra</h1>
+
+    <ul id="lista">
+    </ul>
+
+    <button onclick="añadirProducto()">Añadir</button>
+
+    <script>
+
+        function añadirProducto() {
+
+            var producto = prompt("¿Qué producto quieres añadir?");
+
+            if (producto != null && producto != "") {
+
+                var nuevoProducto = document.createElement("li");
+
+                nuevoProducto.textContent = producto;
+
+                document.getElementById("lista").appendChild(nuevoProducto);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+

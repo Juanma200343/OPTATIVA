@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+    #parrafo2, #parrafo3 { display: none; } 
+   #mostrar { cursor: pointer; color: blue; 
+   text-decoration: underline; } </style> 
+   </head> 
+   
+   <body> 
+    <h1>¿Qué es JavaScript?</h1> 
+    <p id="parrafo1"> JavaScript es un lenguaje de programación que se utiliza para crear páginas web interactivas. Permite mejorar la experiencia del usuario mediante elementos dinámicos como animaciones, menús y mapas interactivos. </p> 
+    <p id="parrafo2"> JavaScript permite que los navegadores respondan a las acciones de los usuarios y modifiquen el contenido de una página web de forma dinámica. Actualmente se utiliza tanto en el lado del cliente como en el lado del servidor. </p>
+    <p id="parrafo3"> JavaScript también cuenta con bibliotecas y frameworks que permiten reutilizar código y facilitar el desarrollo de aplicaciones web. Además, puede trabajar junto con HTML y CSS para crear páginas dinámicas e interactivas. </p>
+    
+    <span id="mostrar" onclick="mostrar()">Mostrar más...</span>
+     <script> 
+     
+     function mostrar() { 
+        var parrafo2 = document.getElementById("parrafo2"); 
+        var parrafo3 = document.getElementById("parrafo3"); 
+        var span = document.getElementById("mostrar");
+     
+     if (parrafo2.style.display === "none") { 
+        parrafo2.style.display = "block"; 
+        parrafo3.style.display = "block"; 
+        span.textContent = "Mostrar menos..."; 
+    }else { 
+        parrafo2.style.display = "none"; 
+        parrafo3.style.display = "none"; 
+        span.textContent = "Mostrar más..."; }
+     }
+        
+    </script>
+</body>
+</html>

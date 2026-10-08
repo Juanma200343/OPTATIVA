@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          function cambiarValorCiudad(){
+            document.getElementById("ciudad").textContent ="Sevilla";
+        }
+
+        function cambiarGastosDeEnvio(){
+            document.getElementById("gastos").textContent ="3€";
+        }
+
+        function cambiarFechaEnvio(){
+            var fechaActual = new Date();
+
+            document.getElementById("fecha").textContent = fechaActual.toLocaleDateString();
+        }
+
+        
+        var ciudades_gratis = ["Sevilla", "Madrid","Valencia", "Barcelona"];
+
+        var ciudades_gastos = ["Cantabria", "Pontevedra", "Toledo", "Segovia"];
+
+       
+
+        window.onload = function() {
+            var usuario = prompt("Donde estas : ")
+            cambiarFechaEnvio()
+             if(ciudades_gastos.includes(usuario)){
+            document.getElementById("gastos").textContent =
+                "Los gastos de envío son gratuitos";          
+        }else {
+
+            // Ciudad donde no se realizan envíos
+            document.getElementById("gastos").textContent =
+                "No se pueden realizar envíos";
+
+            // Ocultamos la fecha
+            document.getElementById("fecha").style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

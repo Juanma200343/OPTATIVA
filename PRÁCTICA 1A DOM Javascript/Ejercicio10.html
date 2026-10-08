@@ -1,0 +1,129 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <style>
+        .producto {
+            border: 1px solid black;
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .producto img {
+            width: 150px;
+        }
+
+        .disabled {
+            background-color: grey;
+            color: white;
+        }
+
+        .enabled {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- AQUÍ faltaba el contenedor -->
+    <div id="productos"></div>
+
+    <script>
+
+        const productos = [
+            {
+                id: 1,
+                nombre: 'Patata',
+                precio: 1,
+                imagen: 'patata.jpg'
+            },
+            {
+                id: 2,
+                nombre: 'Cebolla',
+                precio: 1.2,
+                imagen: 'cebolla.jpg'
+            },
+            {
+                id: 3,
+                nombre: 'Calabacin',
+                precio: 2.1,
+                imagen: 'calabacin.jpg'
+            },
+            {
+                id: 4,
+                nombre: 'Fresas',
+                precio: 0.6,
+                imagen: 'fresas.jpg'
+            }
+        ];
+
+
+        function mostrarProductos() {
+
+            var contenedor = document.getElementById("productos");
+
+            productos.forEach(function(producto) {
+
+                // Creamos el contenedor del producto
+                var divProducto = document.createElement("div");
+                divProducto.className = "producto";
+
+                // Creamos el nombre
+                var nombre = document.createElement("h2");
+                nombre.textContent = producto.nombre;
+
+                // Creamos el precio
+                var precio = document.createElement("p");
+                precio.textContent = "Precio: " + producto.precio + " €";
+
+                // Creamos la imagen
+                var imagen = document.createElement("img");
+                imagen.src = "img/" + producto.imagen;
+                imagen.alt = producto.nombre;
+
+                // Creamos el botón
+                var boton = document.createElement("button");
+                boton.textContent = "Disponible";
+                boton.className = "disabled";
+
+                // Evento del botón
+                boton.onclick = function() {
+
+                    if (boton.className === "disabled") {
+                        boton.className = "enabled";
+                    } else {
+                        boton.className = "disabled";
+                    }
+
+                };
+
+                // Añadimos los elementos al producto
+                divProducto.appendChild(nombre);
+                divProducto.appendChild(imagen);
+                divProducto.appendChild(precio);
+                divProducto.appendChild(boton);
+
+                // Añadimos el producto al HTML
+                contenedor.appendChild(divProducto);
+
+            });
+        }
+
+
+        // Ejecutamos la función
+        mostrarProductos();
+
+    </script>
+
+</body>
+
+</html>
+```
