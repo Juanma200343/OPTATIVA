@@ -13,3 +13,37 @@ extensión. Los ficheros sin extensión se cuentan como "(sin extensión)". Usa 
 
 
 
+
+
+Ejercicio 2 
+
+e) ¿Por qué el programa termina solo después de clearInterval? ¿Qué pasaría si no lo
+llamaras?
+
+Utilizamos un sistema llamado Event Loop (bucle de eventos), que permite gestionar operaciones asíncronas y ejecutar funciones cuando corresponde.
+
+
+Ejercicio 4
+
+a) stdout.write() muestra la pregunta y stdin.once('data') recoge el nombre del archivo.
+
+b) createReadStream() lee el archivo y createWriteStream() escribe la copia en mayúsculas.
+
+c) finish indica que se ha terminado de escribir el archivo y muestra los bytes escritos.
+
+d) error detecta si hay algún problema y process.exit(1) termina el programa con error.
+
+e) No podemos usar directamente lectura.pipe(escritura) porque copiaría el texto tal cual, sin convertirlo a mayúsculas. Por eso usamos data y toUpperCase().
+
+No hace falta process.exit() al final porque Node.js termina solo cuando acaba de trabajar.
+
+
+Ejercicio 6
+
+e) ¿Por qué aparece también GET /favicon.ico en la terminal?
+
+Porque el navegador solicita automáticamente el icono de la página web (favicon).
+
+¿Qué ocurre si arrancas el servidor dos veces en el mismo puerto?
+
+El segundo servidor no puede arrancar porque el puerto ya está ocupado por el primero. Aparece un error eaddrinuse.
