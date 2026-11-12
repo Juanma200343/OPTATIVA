@@ -1,20 +1,38 @@
-const express = require('express')
-const app = express()
-const PORT = 3000
 
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const PORT = 3000;
+
+// Middleware para registrar las peticiones
 app.use((req, res, next) => {
- const hora = new Date().toLocaleTimeString()
- console.log(`${hora} ${req.method} ${req.url}`)
- next() // ¡pasa a lo siguiente!
-})
+    const hora = new Date().toLocaleTimeString();
+    console.log(`${hora} ${req.method} ${req.url}`);
+    next();
+});
 
+// Servir archivos estáticos
+app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('Inicio'))
+// Ruta de inicio
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/views/index.html'));
+});
 
-app.get('/horario',(req,res) => res.send('Horario'))
+// Ruta de horario
+app.get('/horario', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/views/horario.html'));
+});
 
-// 404: SIEMPRE la última
+// Página de error 404
 app.use((req, res) => {
- res.status(404).send('<h1>Página no encontrada</h1>')
-})
-app.listen(PORT, () => console.log(`En el puerto ${PORT}`))
+    res.status(404).sendFile(
+        path.join(__dirname, 'public/views/404.html')
+    );
+});
+
+// Iniciar servidor
+app.listen(PORT, () => {
+    console.log(`Servidor funcionando en el puerto ${PORT}`);
+});
