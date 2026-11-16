@@ -1,0 +1,23 @@
+<%- include('partials/cabecera', { titulo: titulo }) %>
+
+<h2>Horario de apertura</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Día</th>
+            <th>Horas</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% horario.forEach(fila => { %>
+            <tr>
+                <td><%= fila.dia %></td>
+                <td><%= fila.horas %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('partials/pie') %>
